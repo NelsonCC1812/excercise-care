@@ -70,4 +70,6 @@ now for that patient you should show the graph for last 90 days.
 
  ### Comments <div id='comments'>
 
- The time was very limited, so I could't work as I would like, the attention to details, the interactivite of the front-end the testing of the inputs, etc. With more time I would do a better job. 
+ * The time was very limited, so I could't work as I would like, the attention to details, the interactivite of the front-end the testing of the inputs, etc. With more time I would do a better job. 
+
+ * Heroku server shutdowns every 30 min, so the application will charge very slow first time, after that, it will load very fast.
