@@ -17,7 +17,7 @@ export default ({ setTheUser, closeModal }) => {
         e.preventDefault()
 
         authServices.login(form)
-            .then(user => setTheUser(user))
+            .then(data => data.user ? setTheUser(data.user) : console.log('the user already exists'))
             .then(() => closeModal())
             .catch(err => console.log(err))
     }

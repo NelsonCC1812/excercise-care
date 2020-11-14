@@ -22,7 +22,7 @@ export default ({ closeModal, setTheUser }) => {
         }
 
         authServices.signup({ username: form.username, password: form.password1 })
-            .then(user => setTheUser(user))
+            .then(data => data.user ? setTheUser(data.user) : console.log('the user already exist'))
             .then(() => closeModal())
             .catch(err => console.log(err))
     }
@@ -34,11 +34,13 @@ export default ({ closeModal, setTheUser }) => {
             <label htmlFor='username' >Username</label>
             <input type='text' id='username' value={ form.username } placeholder='Choose your username' onChange={ inputHandler } />
 
-            <labeñ htmlFor='password1' >Password</labeñ>
+            <label htmlFor='password1' >Password</label>
             <input type='password' id='password1' placeholder='Write your password' value={ form.password1 } onChange={ inputHandler } />
 
             <label htmlFor='password2'>Repear your password</label>
             <input type='password' id='password2' placeholder='The same password' value={ form.password2 } onChange={ inputHandler } />
+
+            <button type='submit'>Submit</button>
 
         </form>
     </div>

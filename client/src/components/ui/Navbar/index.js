@@ -54,6 +54,6 @@ export default ({ loggedInUser, setTheUser, logout }) => {
 
         </div>
 
-        { showModalForm && <ModalForm show={ showModalForm } Component={ showModalForm === 'login' ? () => <Login setTheUser={ setTheUser } closeModal={ () => setShowModalForm(false) } /> : () => <Signup setTheUser={ setTheUser } /> } closeModal={ () => setShowModalForm(false) } /> }
+        { showModalForm && <ModalForm show={ showModalForm } Component={ showModalForm === 'login' ? () => <Login setTheUser={ setTheUser } closeModal={ () => setShowModalForm(false) } /> : () => <Signup setTheUser={ setTheUser } closeModal={ () => setShowModalForm(false) } /> } /> }
     </div>
 }
