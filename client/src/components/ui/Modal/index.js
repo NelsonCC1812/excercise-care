@@ -17,7 +17,6 @@ export default ({ show, closeModal, Component }) => {
         <div className='modal-main-wrapper'>
             <section className='modal-main'>
                 { show && Component && <Component closeModal={ closeModal } /> }
-
             </section>
         </div>
     </div>

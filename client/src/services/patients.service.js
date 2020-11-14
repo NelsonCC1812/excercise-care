@@ -7,4 +7,5 @@ export default class PatientServices {
 
     newPatient = patient => this.service.post('/newPatient', patient).then(response => response.data)
     getPatient = id => this.service.get('/getPatient/' + id).then(response => response.data)
+    getAllPatiens = () => this.service.get('/getAllPatients').then(respose => respose.data)
 }

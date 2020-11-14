@@ -1,9 +1,10 @@
 //React imports
 import React, { useState, useEffect, useCallback } from 'react'
-import { Switch, Router } from 'react-router-dom'
+import { Switch, Redirect, Route } from 'react-router-dom'
 
 // Components
 import Navbar from './components/ui/Navbar'
+import Patients from './components/pages/Patients'
 
 //Style imports
 import './App.css'
@@ -41,6 +42,17 @@ export default function App() {
   return <div>
     <Navbar loggedInUser={ loggedInUser } setTheUser={ setTheUser } logout={ logout } />
 
+    <div style={ { marginTop: '10vh' } }>
+
+      <Switch>
+
+        <Route exact path='/showPatients' render={ () => loggedInUser ? <Patients /> : <Redirect to='/home' /> } />
+        <Route path='/showPatients/:patientId' />
+
+        <Redirect to='/home' />
+      </Switch>
+
+    </div>
 
   </div>
 }

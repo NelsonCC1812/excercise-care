@@ -47,13 +47,13 @@ export default ({ loggedInUser, setTheUser, logout }) => {
 
             <nav className={ `nav-links ${showMenu ? 'show-menu' : ''}` }>
                 <ul>
-                    <li>{ loggedInUser ? <Link to='/patients' className='link' onClick={ () => setShowMenu(false) }> Patients</Link> : <button className='link btn-link' onClick={ () => { setShowModalForm('login'); setShowMenu(false) } }>Login</button> }</li>
+                    <li>{ loggedInUser ? <Link to='/showPatients' className='link' onClick={ () => setShowMenu(false) }> Patients</Link> : <button className='link btn-link' onClick={ () => { setShowModalForm('login'); setShowMenu(false) } }>Login</button> }</li>
                     <li>{ loggedInUser ? <button className='link btn-link' onClick={ () => { logout(); setShowMenu(false) } }>Logout</button> : <button className='link btn-link' onClick={ () => { setShowModalForm('signup'); setShowMenu(false) } }>Signup</button> }</li>
                 </ul>
             </nav>
 
         </div>
 
-        { showModalForm && <ModalForm show={ showModalForm } Component={ showModalForm === 'login' ? () => <Login setTheUser={ setTheUser } closeModal={ () => setShowModalForm(false) } /> : () => <Signup setTheUser={ setTheUser } closeModal={ () => setShowModalForm(false) } /> } /> }
+        { showModalForm && <ModalForm show={ showModalForm } closeModal={ () => setShowModalForm(false) } Component={ showModalForm === 'login' ? () => <Login closeModal={ () => setShowModalForm(false) } setTheUser={ setTheUser } /> : () => <Signup closeModal={ () => setShowModalForm(false) } setTheUser={ setTheUser } /> } /> }
     </div>
 }

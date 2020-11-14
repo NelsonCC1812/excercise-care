@@ -26,8 +26,15 @@ router.post('/newPatient', (req, res, next) => {
 
     Patient.create({ name, age, gender })
         .then(patient => User.findByIdAndUpdate(req.user._id, { $push: { patients: patient._id } }, { new: true }).populate('patients'))
-        .then(user => res.json({ status: 'ok', user }))
+        .then(user => res.json({ status: 'ok', data: user.patients }))
         .catch(err => res.json({ status: 'ko', message: err }))
+})
+
+router.get('/getAllPatients', (req, res, next) => {
+    User.findById(req.user._id).populate('patients')
+        .then(user => user.patients)
+        .then(patients => res.json({ data: patients, status: 'ok' }))
+        .catch(err => console.log(err))
 })
 
 
