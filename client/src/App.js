@@ -4,6 +4,7 @@ import { Switch, Redirect, Route } from 'react-router-dom'
 
 // Components
 import Navbar from './components/ui/Navbar'
+import Home from './components/pages/Home'
 import Patients from './components/pages/Patients'
 
 //Style imports
@@ -46,6 +47,7 @@ export default function App() {
 
       <Switch>
 
+        <Route exact path='/home' render={ () => <Home /> } />
         <Route exact path='/showPatients' render={ () => loggedInUser ? <Patients /> : <Redirect to='/home' /> } />
         <Route path='/showPatients/:patientId' />
 

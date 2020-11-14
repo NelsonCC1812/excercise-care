@@ -41,7 +41,7 @@ export default ({ loggedInUser, setTheUser, logout }) => {
         <div className='navbar-container'>
 
             <div className='nav-header'>
-                <Link to='/home' className='home-link' onClick={ () => showMenu(false) }>CareExpand</Link>
+                <Link to='/home' className='home-link' onClick={ () => setShowMenu(false) }>CareExpand</Link>
                 <figure><img className={ `menu-img ${showMenu ? 'opened-menu' : ''}` } src={ menuImage } alt='menu' onClick={ () => setShowMenu(!showMenu) } /></figure>
             </div>
 
