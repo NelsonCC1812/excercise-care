@@ -6,6 +6,7 @@ import { Switch, Redirect, Route } from 'react-router-dom'
 import Navbar from './components/ui/Navbar'
 import Home from './components/pages/Home'
 import Patients from './components/pages/Patients'
+import PatientProfile from './components/pages/PatientProfile'
 
 //Style imports
 import './App.css'
@@ -49,7 +50,7 @@ export default function App() {
 
         <Route exact path='/home' render={ () => <Home /> } />
         <Route exact path='/showPatients' render={ () => loggedInUser ? <Patients /> : <Redirect to='/home' /> } />
-        <Route path='/showPatients/:patientId' />
+        <Route path='/showPatients/:patientId' render={ match => <PatientProfile { ...match } /> } />
 
         <Redirect to='/home' />
       </Switch>
