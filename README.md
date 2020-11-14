@@ -2,6 +2,7 @@
 
 * [Models](#models)
 * [Endpoins](#endpoints)
+* [Comments](#comments)
 
 
 Write a Program in React and Node JS. Connect it with Mongo DB. 
@@ -65,3 +66,8 @@ now for that patient you should show the graph for last 90 days.
  | Method | path                     | Description                                                          |
  | ------ | ------------------------ | -------------------------------------------------------------------- |
  | post   | /api/mbiSurvey/newSurvey | Create a new survey and add it to the user, response: {status, user} |
+
+
+ ### Comments <div id='comments'>
+
+ The time was very limited, so I could't work as I would like, the attention to details, the interactivite of the front-end the testing of the inputs, etc. With more time I would do a better job. 

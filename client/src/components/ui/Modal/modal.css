@@ -1,0 +1,55 @@
+.blocked-scroll{
+    overflow: hidden;
+}
+
+.modal-container{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color:transparent;
+}
+
+.modal-background{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    
+    background-color: black;
+    filter: opacity(.4) blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.modal-main-wrapper{
+    background-color: rgba(10,10,10, .8);
+    width: 45vw;
+    height: 70vh;
+    z-index: 1005;
+    border-radius: 2px;
+    backdrop-filter: blur(100px);
+}
+
+
+.modal-main{
+    position: absolute;
+    color: white;
+    width: 100%;
+    height: 100%;
+    z-index: 1010;
+}
+
+@media(max-width: 1300px){
+    .modal-main-wrapper{
+        width: 80vw;
+    }
+}
+@media(max-height: 500px){
+    .modal-main-wrapper{
+        height: 90vh;
+    }
+}

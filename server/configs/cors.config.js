@@ -1,6 +1,6 @@
 const cors = require('cors')
 
-const whitelist = ['https://localhost:3000']
+const whitelist = [process.env.ENV === 'DEV' ? 'http://localhost:3000' : 'https://excercise-care.herokuapp.com']
 const corsOptions = {
     origin: (origin, cb) => {
         const originWhitelisted = whitelist.includes(origin)
