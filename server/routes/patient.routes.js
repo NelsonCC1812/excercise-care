@@ -46,7 +46,7 @@ router.get('/getPatient/:patientId', (req, res, next) => {
     const { patientId } = req.params
 
     User.findOne({ _id: req.user._id, patients: { $elemMatch: { $eq: patientId } } })
-        .then(finded => finded ? Patient.findById(patientId) : res.json({ status: 'ok', message: 'not-finded' }))
+        .then(finded => finded ? Patient.findById(patientId).populate('history') : res.json({ status: 'ok', message: 'not-finded' }))
         .then(patient => res.json({ status: 'ok', data: patient }))
         .catch(err => console.log(err))
 })

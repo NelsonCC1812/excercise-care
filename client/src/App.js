@@ -50,7 +50,7 @@ export default function App() {
 
         <Route exact path='/home' render={ () => <Home /> } />
         <Route exact path='/showPatients' render={ () => loggedInUser ? <Patients /> : <Redirect to='/home' /> } />
-        <Route path='/showPatients/:patientId' render={ match => <PatientProfile { ...match } /> } />
+        <Route path='/showPatients/:patientId' render={ match => loggedInUser ? <PatientProfile { ...match } /> : <Redirect to='/home' /> } />
 
         <Redirect to='/home' />
       </Switch>
