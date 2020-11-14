@@ -1,0 +1,21 @@
+# Dependency directory
+node_modules
+
+# Debug log from npm
+npm-debug.log
+
+# Environment Variables should NEVER be published
+.env
+
+.DS_Store
+
+.env.development
+.env.production
+
+.env.prod
+.env.dev
+
+# SSL keys
+
+bin/cert.pem
+bin/key.pem
