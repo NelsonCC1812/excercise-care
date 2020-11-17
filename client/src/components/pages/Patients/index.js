@@ -19,7 +19,7 @@ export default ({ loggedInUser }) => {
 
     useEffect(() => {
         patientService.getAllPatiens()
-            .then(response => response.data ? setPatients(response.data) : setPatients(false))
+            .then(response => response.data.length === 0 ? setPatients(false) : setPatients(response.data))
             .catch(err => console.log(err))
     }, [])
 
