@@ -3,6 +3,9 @@ import React, { useState } from 'react'
 // Services
 import PatientService from '../../../../services/patients.service'
 
+// Styles
+import './patientForm.css'
+
 export default ({ closeModal, setPatients }) => {
 
     // State
@@ -29,7 +32,8 @@ export default ({ closeModal, setPatients }) => {
     }
 
 
-    return <div>
+    return <div className='patientForm'>
+        <h4>Create a patient</h4>
         <form onSubmit={ submitHandler }>
 
             <div>
